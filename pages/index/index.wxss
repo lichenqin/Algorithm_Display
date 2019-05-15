@@ -1,0 +1,17 @@
+.common{
+  font-size: 40rpx;
+  font-weight: bold;
+  display: block;
+}
+.container{
+  background-color: #eee;
+  height: 60vh;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around; 
+}
+.isize{
+  width: 375rpx;
+  height: 375rpx;
+}

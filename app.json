@@ -1,0 +1,31 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/Display/Display"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#eee",
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "算法图解"
+  },
+  "tabBar": {
+    "color":"#808080",
+    "selectedColor":"#000000",
+    "backgroundColor": "#eeeeee",
+    "list":[
+      {
+        "pagePath":"pages/index/index",
+        "text":"Article",
+        "iconPath":"images/icon/Ns_Article.png",
+        "selectedIconPath":"images/icon/Sl_Article.png"
+      },
+      {
+        "pagePath": "pages/Display/Display",
+        "text": "Display",
+        "iconPath": "images/icon/Ns_Display.png",
+        "selectedIconPath": "images/icon/SlDisplay2.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}
