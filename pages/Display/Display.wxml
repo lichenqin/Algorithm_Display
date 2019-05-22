@@ -1,6 +1,6 @@
 
-<canvas canvas-id="firstCanvas" class="canvaStyle"></canvas>
-<!-- 当使用绝对定位时，文档流后边的 canvas 的显示层级高于前边的 canvas -->
-
-<button bindtap='bubbleSort'>bubble sort</button>
-<input placeholder='请输入数组 数组值在1-100之间' type='number' value='{{array}}' bindinput='GetData'></input>
+  <canvas canvas-id="bubble" class="canvaStyle"></canvas>
+  <!-- 当使用绝对定位时，文档流后边的 canvas 的显示层级高于前边的 canvas -->
+<view class='container'>
+  <button bindtap='Process'>bubble sort</button>
+</view>

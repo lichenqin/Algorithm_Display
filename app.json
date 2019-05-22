@@ -3,11 +3,13 @@
     "pages/index/index",
     "pages/Display/Display"
   ],
+
   "window": {
     "navigationBarBackgroundColor": "#eee",
     "navigationBarTextStyle": "black",
     "navigationBarTitleText": "算法图解"
   },
+
   "tabBar": {
     "color":"#808080",
     "selectedColor":"#000000",
