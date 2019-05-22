@@ -1,0 +1,23 @@
+.container{
+  background-color: #fff;
+  height: 40vh;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+   align-items: flex-end;
+  justify-content: space-around; 
+}
+
+.object{
+  color: #008000;
+  background-color:#008000; 
+  width: 40rpx;
+  height: 100rpx;
+  border: solid;
+}
+
+.canvaStyle{
+  background-color:#eee;
+  width: 750rpx;
+  height: 60vh; 
+}

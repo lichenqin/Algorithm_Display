@@ -1,7 +1,8 @@
 {
   "pages": [
+    "pages/QuickSort/QuickSort",
     "pages/index/index",
-    "pages/Display/Display"
+    "pages/BubbleSort/BubbleSort"
   ],
 
   "window": {
@@ -22,7 +23,7 @@
         "selectedIconPath":"images/icon/Sl_Article.png"
       },
       {
-        "pagePath": "pages/Display/Display",
+        "pagePath": "pages/BubbleSort/BubbleSort",
         "text": "Display",
         "iconPath": "images/icon/Ns_Display.png",
         "selectedIconPath": "images/icon/SlDisplay2.png"
