@@ -1,10 +1,7 @@
 .head-style {
   width: 750rpx;
-  height: 499rpx;
+  height: 300rpx;
   background: #fff;
-  border: 3rpx;
-  border-style: solid;
-  border-color: black;
 
   display: flex;
   flex-direction: column;
@@ -14,15 +11,13 @@
 
 .middleView-style {
   display: flex;
+
 }
 
 .middle-style {
   width: 373rpx;
   height: 474rpx;
-  background: #fff;
-  border: 3rpx;
-  border-style: solid;
-  border-color: black;
+  background: #eee;
 
   font-size: 36rpx;
   font-weight: bold;
@@ -37,9 +32,6 @@
   width: 750rpx;
   height: 290rpx;
   background: #fff;
-  border: 3rpx;
-  border-style: solid;
-  border-color: black;
 
   font-size: 36rpx;
   font-weight: bold;
@@ -50,11 +42,23 @@
 }
 
 .image-middle {
-  width: 250rpx;
-  height: 300rpx;
+  width: 375rpx;
+  height: 450rpx;
 }
 
 .image-bottom {
+  margin: 190rpx 0;
   width: 400rpx;
   height: 75rpx;
+}
+.middle{
+  display: flex;
+  margin: 0 100rpx;
+  flex-direction: column;
+  align-items: center;
+  border: 3rpx solid #000;
+}
+swiper{
+  margin-top: 100rpx;
+  height: 50vh;
 }

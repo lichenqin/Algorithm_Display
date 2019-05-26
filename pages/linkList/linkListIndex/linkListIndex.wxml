@@ -1,15 +1,11 @@
-<view class="container">
+
   <view class="head-style">
     <image src="/images/linkTable.png" class="image-head"></image>
   </view>
-  <navigator url="/pages/linkList/linkListAdd/linkListAdd">
-    <view class="text-style" style="background: #6eb;">
-      <text>链表添加结点</text>
+
+
+    <view class="bottom-style" >
+     <button style="background: #6eb;" bindtap='add'> 链表添加结点</button>
+     <button style="background: #6cf;" bindtap='sub'>链表删除结点</button>
     </view>
-  </navigator>
-  <navigator url="/pages/linkList/linkListSub/linkListSub">
-    <view class="text-style" style="background: #6cf;">
-      <text>链表删除结点</text>
-    </view>
-  </navigator>
-</view>
+

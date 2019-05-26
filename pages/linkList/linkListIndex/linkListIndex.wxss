@@ -2,9 +2,6 @@
   width: 750rpx;
   height: 710rpx;
   background: #fff;
-  border: 3rpx;
-  border-style: solid;
-  border-color: black;
 
   display: flex;
   justify-content: space-around;
@@ -25,7 +22,23 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  border: 3rpx;
+}
+
+button{
+  width: 300rpx;
+  height: 125rpx;
+  font-size: 35rpx;
+  font-weight: bold;
+  color: white;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border: 5rpx;
   border-style: solid;
-  border-color: black;
+  border-color: #bbb;
+  border-radius: 50rpx;
+}
+.bottom-style{
+margin: 150rpx 50rpx 150rpx 50rpx;
+display: flex;
 }

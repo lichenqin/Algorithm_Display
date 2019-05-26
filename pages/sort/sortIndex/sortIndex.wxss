@@ -29,3 +29,21 @@
   border-style: solid;
   border-color: black;
 }
+button{
+  width: 250rpx;
+  height: 125rpx;
+  font-size: 40rpx;
+  font-weight: bold;
+  color: white;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border: 5rpx;
+  border-style: solid;
+  border-color: #bbb;
+  border-radius: 50rpx;
+}
+.bottom-style{
+margin: 150rpx 50rpx 150rpx 50rpx;
+display: flex;
+}

@@ -1,25 +1,36 @@
-<view class="container">
+
   <view class="head-style">
     <text>啊哈！算法</text>
     <text>这里写简介 或者放图片 暂定</text>
     <text>主要目的是介绍说明小程序功能</text>
   </view>
-  <view class="middleView-style">
-    <navigator url="/pages/sort/sortIndex/sortIndex">
-      <view class="middle-style">
-        <image src="/images/sequence.png" class="image-middle"></image>
-        <text>数组排序</text>
+
+  <swiper indicator-dots='true'>
+    <swiper-item>
+      <view class="middle" bindtap='sort'>
+
+          <image src="/images/sequence.png" class="image-middle"></image>
+          <text>数组排序</text>
+
       </view>
-    </navigator>
-    <view  class="middle-style">
-      <image src="/images/bTree.png" class="image-middle"></image>
-      <text>二叉树</text>
-    </view>
-  </view>
-  <navigator url="/pages/linkList/linkListIndex/linkListIndex">
-    <view class="bottom-style">
-      <image src="/images/linkTable.png" class="image-bottom"></image>
-      <text>链表</text>
-    </view>
-  </navigator>
-</view>
+    </swiper-item>
+
+
+    <swiper-item>
+      <view class="middle">
+        <image src="/images/bTree.png" class="image-middle"></image>
+        <text>二叉树</text>
+      </view>
+    </swiper-item>
+
+
+    <swiper-item>
+      <view class="middle" bindtap='linklist'>
+     
+          <image src="/images/linkTable.png" class="image-bottom"></image>
+          <text>链表</text>
+
+      </view>
+
+</swiper-item>
+</swiper>

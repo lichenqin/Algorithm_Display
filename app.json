@@ -1,12 +1,13 @@
 {
   "pages": [
+"pages/linkList/linkListIndex/linkListIndex",
     "pages/index/index",
     "pages/sort/sortIndex/sortIndex",
     "pages/sort/BubbleSort/BubbleSort",
     "pages/sort/InsertSort/InsertSort",
     "pages/sort/QuickSort/QuickSort",
     "pages/sort/SelectSort/SelectSort",
-    "pages/linkList/linkListIndex/linkListIndex",
+    
     "pages/linkList/linkListAdd/linkListAdd",
     "pages/linkList/linkListSub/linkListSub",
     "pages/linkList/linkListAddTop/linkListAddTop",
