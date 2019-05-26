@@ -7,3 +7,52 @@
   justify-content: space-around;
   align-items: center;
 }
+
+/*以下均为链表所需格式*/
+.displayArea-style {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.entirety-style {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.node-style {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  background: green;
+  border-radius: 50%;
+  width: 60rpx;
+  height: 60rpx;
+}
+
+.arrow-style {
+  width: 80rpx;
+  height: 80rpx;
+}
+
+.button-style {
+  width: 80%;
+  background-color: #6eb;
+  color: white;
+}
+
+.button-view {
+  height:300rpx;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+/*链表代码页所需格式*/
+.linkListCoding-style {
+  font-size: 36rpx;
+}

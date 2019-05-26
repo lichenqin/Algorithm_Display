@@ -1,7 +1,22 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/sequence/sequence"
+    "pages/sequence/sequence",
+    "pages/linkList/linkListIndex/linkListIndex",
+    "pages/linkList/linkListAdd/linkListAdd",
+    "pages/linkList/linkListSub/linkListSub",
+    "pages/linkList/linkListAddTop/linkListAddTop",
+    "pages/linkList/linkListAddTopCoding/linkListAddTopCoding",
+    "pages/linkList/linkListAddMiddle/linkListAddMiddle",
+    "pages/linkList/linkListAddMiddleCoding/linkListAddMiddleCoding",
+    "pages/linkList/linkListAddBottom/linkListAddBottom",
+    "pages/linkList/linkListAddBottomCoding/linkListAddBottomCoding",
+    "pages/linkList/linkListSubTop/linkListSubTop",
+    "pages/linkList/linkListSubTopCoding/linkListSubTopCoding",
+    "pages/linkList/linkListSubMiddle/linkListSubMiddle",
+    "pages/linkList/linkListSubMiddleCoding/linkListSubMiddleCoding",
+    "pages/linkList/linkListSubBottom/linkListSubBottom",
+    "pages/linkList/linkListSubBottomCoding/linkListSubBottomCoding"
   ],
   "window": {
     "backgroundTextStyle": "light",

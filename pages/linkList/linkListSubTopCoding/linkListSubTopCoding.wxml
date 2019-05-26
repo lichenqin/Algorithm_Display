@@ -1,0 +1,6 @@
+<text decode="{{true}}" class= "linkListCoding-style">
+  //头指针为空指针，要删除结点指针为ptr\n
+  ptr=head->next;\n
+  head->next=head->next-next;\n
+  delete ptr;
+</text>

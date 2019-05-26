@@ -1,0 +1,31 @@
+.head-style {
+  width: 750rpx;
+  height: 710rpx;
+  background: #fff;
+  border: 3rpx;
+  border-style: solid;
+  border-color: black;
+
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.image-head {
+  width : 600rpx;
+  height: 100rpx;
+}
+
+.text-style {
+  width: 750rpx;
+  height: 278rpx;
+  font-size: 48rpx;
+  font-weight: bold;
+  color: white;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border: 3rpx;
+  border-style: solid;
+  border-color: black;
+}

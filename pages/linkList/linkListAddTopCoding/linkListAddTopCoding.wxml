@@ -1,0 +1,5 @@
+<text decode="{{true}}" class= "linkListCoding-style">
+  //头指针为空指针，新插入结点指针为ptr\n
+  ptr->next=head->next;\n
+  head->next=ptr;
+</text>

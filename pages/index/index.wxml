@@ -6,18 +6,20 @@
   </view>
   <view class="middleView-style">
     <navigator url="/pages/sequence/sequence">
-    <view class="middle-style">
-      <image src="/images/sequence.png" class="image-middle"></image>
-      <text>数组排序</text>
-    </view>
+      <view class="middle-style">
+        <image src="/images/sequence.png" class="image-middle"></image>
+        <text>数组排序</text>
+      </view>
     </navigator>
     <view  class="middle-style">
       <image src="/images/bTree.png" class="image-middle"></image>
       <text>二叉树</text>
     </view>
   </view>
-  <view class="bottom-style">
-    <image src="/images/linkTable.png" class="image-bottom"></image>
-    <text>链表</text>
-  </view>
+  <navigator url="/pages/linkList/linkListIndex/linkListIndex">
+    <view class="bottom-style">
+      <image src="/images/linkTable.png" class="image-bottom"></image>
+      <text>链表</text>
+    </view>
+  </navigator>
 </view>

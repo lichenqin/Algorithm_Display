@@ -1,0 +1,20 @@
+<view class="container">
+  <view class="head-style">
+    <image src="/images/linkTable.png" class="image-head"></image>
+  </view>
+  <navigator url="/pages/linkList/linkListAddTop/linkListAddTop">
+    <view class="text-style" style="background: #6eb;" >
+      <text>头部添加结点</text>
+    </view>
+  </navigator>
+  <navigator url="/pages/linkList/linkListAddMiddle/linkListAddMiddle">
+    <view class="text-style" style="background: #6ef;">
+      <text>中间添加结点</text>
+    </view>
+  </navigator>
+  <navigator url="/pages/linkList/linkListAddBottom/linkListAddBottom">
+    <view class="text-style" style="background: #6cf;">
+      <text>尾部添加结点</text>
+    </view>
+  </navigator>
+</view>
