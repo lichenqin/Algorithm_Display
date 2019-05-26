@@ -1,0 +1,25 @@
+<view class="container">
+  <view class="head-style">
+    <image src="/images/sequence.png" class="image-head"></image>
+  </view>
+  <navigator url="/pages/sort/BubbleSort/BubbleSort">
+    <view class="text-style" style="background: #6eb;">
+      <text>冒泡排序</text>
+    </view>
+  </navigator>
+  <navigator url="/pages/sort/SelectSort/SelectSort">
+    <view class="text-style" style="background: #6ef;">
+      <text>选择排序</text>
+    </view>
+  </navigator>
+  <navigator url="/pages/sort/InsertSort/InsertSort">
+    <view class="text-style" style="background: #6cf;">
+      <text>插入排序</text>
+    </view>
+  </navigator>
+  <navigator url="/pages/sort/QuickSort/QuickSort">
+    <view class="text-style" style="background: #5af;">
+      <text>快速排序</text>
+    </view>
+  </navigator>
+</view>

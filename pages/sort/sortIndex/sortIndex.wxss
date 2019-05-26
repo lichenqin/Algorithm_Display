@@ -18,7 +18,7 @@
 
 .text-style {
   width: 750rpx;
-  height: 278rpx;
+  height: 190rpx;
   font-size: 48rpx;
   font-weight: bold;
   color: white;

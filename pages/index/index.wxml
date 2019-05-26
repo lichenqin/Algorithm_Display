@@ -5,7 +5,7 @@
     <text>主要目的是介绍说明小程序功能</text>
   </view>
   <view class="middleView-style">
-    <navigator url="/pages/sequence/sequence">
+    <navigator url="/pages/sort/sortIndex/sortIndex">
       <view class="middle-style">
         <image src="/images/sequence.png" class="image-middle"></image>
         <text>数组排序</text>
