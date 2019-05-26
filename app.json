@@ -1,8 +1,9 @@
 {
   "pages": [
-    "pages/QuickSort/QuickSort",
-    "pages/index/index",
-    "pages/BubbleSort/BubbleSort"
+    "pages/InsertSort/InsertSort",
+    "pages/SelectSort/SelectSort",
+    "pages/BubbleSort/BubbleSort",
+    "pages/QuickSort/QuickSort"
   ],
 
   "window": {
@@ -17,14 +18,14 @@
     "backgroundColor": "#eeeeee",
     "list":[
       {
-        "pagePath":"pages/index/index",
-        "text":"Article",
+        "pagePath":"pages/QuickSort/QuickSort",
+        "text":"Quick",
         "iconPath":"images/icon/Ns_Article.png",
         "selectedIconPath":"images/icon/Sl_Article.png"
       },
       {
         "pagePath": "pages/BubbleSort/BubbleSort",
-        "text": "Display",
+        "text": "Bubble",
         "iconPath": "images/icon/Ns_Display.png",
         "selectedIconPath": "images/icon/SlDisplay2.png"
       }

@@ -1,35 +1,56 @@
 Page({
   data:{
     name:"leec",
-    array:[3,5,9,6,8,4,2,7,1,10]
+    array:[3,45,19,36,8,14,12,37,21,10,56],
+    windowWidth: 0,
+    windowHeight: 0,
+    gaspWidth:30
   },
 
 
   onReady: function(){
     var draw_array = this.data.array;//利用draw_array
+    var length = draw_array.length;
     var content = wx.createCanvasContext("bubble");
+
+    var screenWidth = wx.getSystemInfoSync().windowWidth; //获取屏幕宽度
+    var screenHeight = wx.getSystemInfoSync().windowHeight;//获取屏幕高度
+
+    var width = this.data.gaspWidth;//获取一个元素的总宽度 包括：矩形以及空隙的宽度
+    var e_width = width - 15;//元素宽度
+    var start_x = (screenWidth - width*(length-1) - e_width) / 2;
+    var start_y = 0.48 * screenHeight;
+
+    console.log("X的位置：" + start_x);
+    console.log("Y的位置：" + start_y);
+
     content.setFontSize(10);
 
-    function Elements(index, number){
+    function Elements(index, number) {
       content.beginPath();
-      content.rect(20+index*40, 260, 20, -number*20);
+      content.rect(start_x + index * width, start_y, e_width, -number * 5);
       content.setFillStyle('green');
       content.fill();
       content.closePath();
 
       content.setFillStyle('black');
-      content.fillText(number, 25+index*40, 275);
+      content.fillText(number, start_x + index * width + 3, start_y + 10);
     }
 
     var length = draw_array.length;
     var value = 0;
 
-    for( var index = 0; index < length; ++index){
-        value = draw_array[index];
-        Elements(index,value);
+    for (var index = 0; index < length; ++index) {
+      value = draw_array[index];
+      Elements(index, value);
     }
 
     content.draw();
+
+    this.setData({
+      windowWidth: screenWidth,
+      windowHeight: screenHeight
+    })
   },
 
   bubbleSort(){
@@ -47,28 +68,37 @@ Page({
     var raw_array = this.data.array;
     var length = raw_array.length;
     var content = wx.createCanvasContext('bubble', this);
+    
+    var screenWidth = this.data.windowWidth; //获取屏幕宽度
+    var screenHeight = this.data.windowHeight;//获取屏幕高度
+
+    var width = this.data.gaspWidth;//获取一个元素的总宽度 包括：矩形以及空隙的宽度
+    var e_width = width - 15;//元素宽度
+    var start_x = (screenWidth - width * (length - 1) - e_width) / 2;
+    var start_y = 0.48 * screenHeight;
+    
     content.setFontSize(10);
 
     function Elements(index, number) {
       content.beginPath();
+      content.rect(start_x + index * width, start_y, e_width, -number * 5);
       content.setFillStyle('green');//设置颜色为绿色
-      content.rect(20 + index * 40, 260, 20, -number * 20);//创建矩形并填充
       content.fill();
       content.closePath();
 
       content.setFillStyle('black');
-      content.fillText(number, 25 + index * 40, 275);
+      content.fillText(number, start_x + index * width + 3, start_y + 10);
     };
 
     function select(index, number) {
       content.beginPath();
-      content.setFillStyle('gray');
-      content.rect(20 + index * 40, 260, 20, -number * 20);//创建矩形并填充
+      content.rect(start_x + index * width, start_y, e_width, -number * 5);
+      content.setFillStyle('gray');//设置颜色为灰色
       content.fill();
       content.closePath();
 
-      content.setFillStyle("black");
-      content.fillText(number, 25 + index * 40, 275);
+      content.setFillStyle('black');
+      content.fillText(number, start_x + index * width + 3, start_y + 10);
     };
 
     for(var index = 0; index < length; ++index){
@@ -91,6 +121,7 @@ Page({
   Process(){
     var origin_array = this.data.array;     //origin_array 读取 数据
     var origin_length = origin_array.length;//获取origin_array的长度
+    var width = this.data.gaspWidth;
     var outter;//冒泡外层循环
     var index;//内层循环
     var step;//动画每次一多少
@@ -100,7 +131,7 @@ Page({
         this.compare(index, index + 1);//比较函数将比较的两个矩形绘图成灰色
         this.delay(10000);//50000*10000
         if (origin_array[index] > origin_array[index + 1]) { //二者相比较
-          for (step = 2; step <= 40; step += 2) {
+          for (step = 2; step <= width; step += 2) {
             this.move(index, index + 1, step);
             console.log(step);
             this.delay(1000);
@@ -126,39 +157,48 @@ move(index_first, index_second, step) {//移动两个元素(就是上色功能)
   var value = 0;
 
   var content = wx.createCanvasContext("bubble", this);
+  
+  var screenWidth = this.data.windowWidth; //获取屏幕宽度
+  var screenHeight = this.data.windowHeight;//获取屏幕高度
+
+  var width = this.data.gaspWidth;//获取一个元素的总宽度 包括：矩形以及空隙的宽度
+  var e_width = width - 15;//元素宽度
+  var start_x = (screenWidth - width * (length - 1) - e_width) / 2;
+  var start_y = 0.48 * screenHeight;
+  
   content.setFontSize(10);
 
   function Elements(index, number) {
     content.beginPath();
+    content.rect(start_x + index * width, start_y, e_width, -number * 5);
     content.setFillStyle('green');//设置颜色为绿色
-    content.rect(20 + index * 40, 260, 20, -number * 20);//创建矩形并填充
     content.fill();
     content.closePath();
 
-    content.setFillStyle("black");
-    content.fillText(number, 25 + index * 40, 275);
+    content.setFillStyle('black');
+    content.fillText(number, start_x + index * width + 3, start_y + 10);
   };
 
   function move_forward(index, number) {
     content.beginPath();
-    content.setFillStyle('red');
-    content.rect(20 + index * 40 + step, 260, 20, -number * 20);//创建矩形并填充
+    content.rect(start_x + index * width + step, start_y, e_width, -number * 5);
+    content.setFillStyle('red');//设置颜色为绿色
     content.fill();
     content.closePath();
 
-    content.setFillStyle("black");
-    content.fillText(number, 25 + index * 40, 275);
+    content.setFillStyle('black');
+    content.fillText(number, start_x + index * width + 3, start_y + 10);
   };
 
   function move_back(index, number) {
     content.beginPath();
-    content.setFillStyle('red');
-    content.rect(20 + index * 40 - step, 260, 20, -number * 20);//创建矩形并填充
+    content.rect(start_x + index * width - step, start_y, e_width, -number * 5);
+    content.setFillStyle('red');//设置颜色为绿色
     content.fill();
     content.closePath();
 
-    content.setFillStyle("black");
-    content.fillText(number, 25 + index * 40, 275);
+    content.setFillStyle('black');
+    content.fillText(number, start_x + index * width + 3, start_y + 10);
   };
 
   for (i = 0; i < length; ++i) {
