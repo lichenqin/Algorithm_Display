@@ -1,7 +1,7 @@
 {
   "pages": [
-"pages/linkList/linkListIndex/linkListIndex",
     "pages/index/index",
+    "pages/linkList/linkListIndex/linkListIndex",
     "pages/sort/sortIndex/sortIndex",
     "pages/sort/BubbleSort/BubbleSort",
     "pages/sort/InsertSort/InsertSort",

@@ -9,8 +9,7 @@
     <swiper-item>
       <view class="middle" bindtap='sort'>
 
-          <image src="/images/sequence.png" class="image-middle"></image>
-          <text>数组排序</text>
+          <image src="/images/IndexArrayIcon.png" class="image-middle"></image>
 
       </view>
     </swiper-item>
@@ -18,8 +17,9 @@
 
     <swiper-item>
       <view class="middle">
-        <image src="/images/bTree.png" class="image-middle"></image>
-        <text>二叉树</text>
+
+        <image src="/images/IndexBTreeIcon.png" class="image-middle"></image>
+      
       </view>
     </swiper-item>
 
@@ -27,8 +27,7 @@
     <swiper-item>
       <view class="middle" bindtap='linklist'>
      
-          <image src="/images/linkTable.png" class="image-bottom"></image>
-          <text>链表</text>
+          <image src="/images/IndexLinkIcon.png" class="image-middle"></image>
 
       </view>
 

@@ -42,8 +42,8 @@
 }
 
 .image-middle {
-  width: 375rpx;
-  height: 450rpx;
+  width: 550rpx;
+  height: 500rpx;
 }
 
 .image-bottom {
@@ -56,7 +56,7 @@
   margin: 0 100rpx;
   flex-direction: column;
   align-items: center;
-  border: 3rpx solid #000;
+  border: 3rpx solid #fff;
 }
 swiper{
   margin-top: 100rpx;

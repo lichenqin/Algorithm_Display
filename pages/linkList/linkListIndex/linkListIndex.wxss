@@ -9,8 +9,8 @@
 }
 
 .image-head {
-  width : 600rpx;
-  height: 100rpx;
+  width : 750rpx;
+  height: 710rpx;
 }
 
 .text-style {
