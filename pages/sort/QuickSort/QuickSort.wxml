@@ -2,4 +2,6 @@
   <!-- 当使用绝对定位时，文档流后边的 canvas 的显示层级高于前边的 canvas -->
 <view class='container'>
   <button bindtap='Process'>Quick sort</button>
+  <button bindtap='reset'>Reset</button>
+  <button bindtap='explain'>Explain</button>
 </view>

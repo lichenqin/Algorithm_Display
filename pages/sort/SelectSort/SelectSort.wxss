@@ -1,8 +1,8 @@
 .container{
   background-color: #fff;
-  height: 40vh;
+  height: 20vh;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   flex-wrap: nowrap;
    align-items: flex-end;
   justify-content: space-around; 

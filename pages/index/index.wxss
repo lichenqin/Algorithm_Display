@@ -62,3 +62,8 @@ swiper{
   margin-top: 100rpx;
   height: 50vh;
 }
+
+.font-style{
+  font-size: small;
+  font-weight: 10;
+}

@@ -1,5 +1,5 @@
 <view class="head-style">
-  <image src="/images/linkTable.png" class="image-head"></image>
+  <image src="/images/LinkTable.png" class="image-head"></image>
 </view>
 
 <button bindtap='top' style="background: #6eb;">头部添加结点</button>

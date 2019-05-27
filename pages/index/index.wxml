@@ -1,8 +1,8 @@
 
   <view class="head-style">
-    <text>啊哈！算法</text>
-    <text>这里写简介 或者放图片 暂定</text>
-    <text>主要目的是介绍说明小程序功能</text>
+      <text class="font-style">欢迎！</text>
+      <text class="font-style">本程序提供部分算法以及数据结构的演示 讲解</text>
+      <text class="font-style">希望这一次的体验 能够让你感受到算法的美妙</text>
   </view>
 
   <swiper indicator-dots='true'>
@@ -16,20 +16,20 @@
 
 
     <swiper-item>
-      <view class="middle">
+      <view class="middle"  bindtap='linklist'>
 
-        <image src="/images/IndexBTreeIcon.png" class="image-middle"></image>
+        <image src="/images/IndexLinkIcon.png" class="image-middle"></image>
       
       </view>
     </swiper-item>
 
 
     <swiper-item>
-      <view class="middle" bindtap='linklist'>
+      <view class="middle">
      
-          <image src="/images/IndexLinkIcon.png" class="image-middle"></image>
+          <image src="/images/INdexBTreeIcon.png" class="image-middle"></image>
 
       </view>
 
-</swiper-item>
+    </swiper-item>
 </swiper>

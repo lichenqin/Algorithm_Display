@@ -218,6 +218,19 @@ Page({
       }
     }
     content.draw();
+  },
+
+
+  reset() {
+    var origin = this.data.array;
+    var length = origin.length;
+
+    for (var index = 0; index < length; ++index) {
+      origin[index] = Math.round(Math.random() * 50 + 1);
+      console.log(origin[index]);
+    }
+
+    this.onReady();
   }
 
 
