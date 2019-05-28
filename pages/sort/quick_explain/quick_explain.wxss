@@ -1,0 +1,42 @@
+.title{
+  font-size:smaller;
+  font-weight: bold;
+  font-style: normal;
+}
+
+.head{
+  height:10vh;
+  width: 100vw;
+}
+
+.flex{
+  font-size:smaller;
+  display: flex;
+  justify-content: space-around;
+}
+
+.text_strong{
+  font-weight: bold;
+}
+
+.code_style{
+  font-size: smaller;
+}
+
+.left{
+  background-color: #fff;
+  height:300vh;
+  width: 5vw;
+}
+
+.middle{
+  background-color: #fff;
+  height: 300vh;
+  width: 90vw;
+}
+
+.right{
+  background-color: #fff;
+  height: 300vh;
+  width:5vw;
+}

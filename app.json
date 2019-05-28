@@ -21,7 +21,10 @@
     "pages/linkList/linkListSubMiddle/linkListSubMiddle",
     "pages/linkList/linkListSubMiddleCoding/linkListSubMiddleCoding",
     "pages/linkList/linkListSubBottom/linkListSubBottom",
-    "pages/linkList/linkListSubBottomCoding/linkListSubBottomCoding"
+    "pages/linkList/linkListSubBottomCoding/linkListSubBottomCoding",
+    "pages/sort/bubble_explain/bubble_explain",
+    "pages/sort/quick_explain/quick_explain",
+    "pages/sort/select_explain/select_explain"
   ],
   "window": {
     "backgroundTextStyle": "light",

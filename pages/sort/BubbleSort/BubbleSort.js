@@ -226,6 +226,15 @@ reset() {
   }
 
   this.onReady();
-}
+},
+explain:function(){
+  wx.navigateTo({
+    url: '/pages/sort/bubble_explain/bubble_explain',
+  })
+  }, explains: function () {
+    wx.navigateBack({
+      
+    })
+  }
 
 })

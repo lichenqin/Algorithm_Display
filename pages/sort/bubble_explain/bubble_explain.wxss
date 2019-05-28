@@ -1,0 +1,23 @@
+/* pages/bubbleSort/bubbleSort.wxss */
+.title{
+  font-size:smaller;
+  font-weight: bold;
+  font-style: normal;
+}
+
+.head{
+  height:10vh;
+  width: 100vw;
+}
+
+.body{
+  font-size:smaller;
+}
+
+.text_strong{
+  font-weight: bold;
+}
+
+.code_style{
+  font-size: smaller;
+}

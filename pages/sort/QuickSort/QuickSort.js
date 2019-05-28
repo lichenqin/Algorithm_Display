@@ -196,6 +196,11 @@ Page({
     }
 
     this.onReady();
+  },
+  explain: function () {
+    wx.navigateTo({
+      url: '/pages/sort/quick_explain/quick_explain',
+    })
   }
 
 })

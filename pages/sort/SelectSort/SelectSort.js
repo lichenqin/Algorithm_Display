@@ -169,6 +169,11 @@ Page({
     }
 
     this.onReady();
+  },
+  explain: function () {
+    wx.navigateTo({
+      url: '/pages/sort/select_explain/select_explain',
+    })
   }
 
 })
