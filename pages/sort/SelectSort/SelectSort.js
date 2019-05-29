@@ -5,7 +5,7 @@ Page({
     windowWidth: 0,
     windowHeight: 0,
     gaspWidth: 30,
-    delay_time: 1000000
+    speed_level: 5
   },
 
 
@@ -127,17 +127,17 @@ Page({
         }
         
         this.select_element(max_index, index, 'gray');//比较函数将比较的两个矩形绘图成灰色
-        this.delay();//50000*10000
+        this.static_delay();//50000*10000
       }
       
       --index;
 
       this.select_element(max_index, index, 'red');
-      this.delay();
+      this.static_delay();
       origin_array[max_index] = origin_array[index];
       origin_array[index] = max_value;
       this.select_element(max_index, index, 'orange');
-      this.delay();
+      this.static_delay();
     };
 
     this.setData({
@@ -159,16 +159,22 @@ Page({
   },
 
   listen_slider(elements) {
-    var delay_number = 100 - elements.detail.value;
-    console.log(delay_number);
+    var delay_level = (100 - elements.detail.value) / 10;
+    console.log(delay_level);
+
     this.setData({
-      delay_time: 100000 * delay_number
+      speed_level: delay_level
     })
   },
 
   delay() {   //延时函数
-    var limmit = this.data.delay_time;
+    var limmit = this.data.speed_level * 2000000 + 1000000;
     console.log(limmit);
+    for (var index = 0; index < limmit; ++index);
+  },
+
+  static_delay() {
+    var limmit = this.data.speed_level * 10000000 + 5000000;
     for (var index = 0; index < limmit; ++index);
   }
 

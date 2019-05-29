@@ -5,7 +5,7 @@ Page({
     windowWidth: 0,
     windowHeight: 0,
     gaspWidth:30,
-    delay_time: 100000000
+    speed_level:5
   },
 
 
@@ -53,17 +53,6 @@ Page({
       windowHeight: screenHeight
     })
   },
-
-  bubbleSort(){
-    var length = this.data.array.length;
-    var timeoutId;
-
-    for(var index = 0; index < length-2; ++index){
-      this.compare(index, index+1);
-      this.delay();
-    }
-  },
-
 
   compare(first_index, second_index){
     var raw_array = this.data.array;
@@ -114,11 +103,6 @@ Page({
     content.draw();
   },
 
-  delay(time){
-    var limmit = time*10000;
-    for(var index = 0; index < limmit; ++index );
-  },
-
   Process(){
     var origin_array = this.data.array;     //origin_array 读取 数据
     var origin_length = origin_array.length;//获取origin_array的长度
@@ -130,7 +114,7 @@ Page({
     for (outter = 0; outter < origin_length; ++outter) {
       for (index = 0; index < origin_length - outter - 1; ++index) {
         this.compare(index, index + 1);//比较函数将比较的两个矩形绘图成灰色
-        this.delay();
+        this.static_delay();
         if (origin_array[index] > origin_array[index + 1]) { //二者相比较
           for (step = 2; step <= width; step += 2) {
             this.move(index, index + 1, step);
@@ -151,96 +135,103 @@ Page({
   
 
 
-move(index_first, index_second, step) {//移动两个元素(就是上色功能)
-  var arr = this.data.array;
-  var length = arr.length;
-  var i;
-  var value = 0;
+  move(index_first, index_second, step) {//移动两个元素(就是上色功能)
+    var arr = this.data.array;
+    var length = arr.length;
+    var i;
+    var value = 0;
 
-  var content = wx.createCanvasContext("bubble", this);
+    var content = wx.createCanvasContext("bubble", this);
   
-  var screenWidth = this.data.windowWidth; //获取屏幕宽度
-  var screenHeight = this.data.windowHeight;//获取屏幕高度
+    var screenWidth = this.data.windowWidth; //获取屏幕宽度
+    var screenHeight = this.data.windowHeight;//获取屏幕高度
 
-  var width = this.data.gaspWidth;//获取一个元素的总宽度 包括：矩形以及空隙的宽度
-  var e_width = width - 15;//元素宽度
-  var start_x = (screenWidth - width * (length - 1) - e_width) / 2;
-  var start_y = 0.48 * screenHeight;
+    var width = this.data.gaspWidth;//获取一个元素的总宽度 包括：矩形以及空隙的宽度
+    var e_width = width - 15;//元素宽度
+    var start_x = (screenWidth - width * (length - 1) - e_width) / 2;
+    var start_y = 0.48 * screenHeight;
   
-  content.setFontSize(10);
+    content.setFontSize(10);
 
-  function Elements(index, number) {
-    content.beginPath();
-    content.rect(start_x + index * width, start_y, e_width, -number * 5);
-    content.setFillStyle('green');//设置颜色为绿色
-    content.fill();
-    content.closePath();
+    function Elements(index, number) {
+      content.beginPath();
+      content.rect(start_x + index * width, start_y, e_width, -number * 5);
+      content.setFillStyle('green');//设置颜色为绿色
+      content.fill();
+      content.closePath();
 
-    content.setFillStyle('black');
-    content.fillText(number, start_x + index * width + 3, start_y + 10);
-  };
+      content.setFillStyle('black');
+      content.fillText(number, start_x + index * width + 3, start_y + 10);
+    };
 
-  function move_forward(index, number) {
-    content.beginPath();
-    content.rect(start_x + index * width + step, start_y, e_width, -number * 5);
-    content.setFillStyle('red');//设置颜色为绿色
-    content.fill();
-    content.closePath();
+    function move_forward(index, number) {
+      content.beginPath();
+      content.rect(start_x + index * width + step, start_y, e_width, -number * 5);
+      content.setFillStyle('red');//设置颜色为绿色
+      content.fill();
+      content.closePath();
 
-    content.setFillStyle('black');
-    content.fillText(number, start_x + index * width + 3, start_y + 10);
-  };
+      content.setFillStyle('black');
+      content.fillText(number, start_x + index * width + 3, start_y + 10);
+    };
 
-  function move_back(index, number) {
-    content.beginPath();
-    content.rect(start_x + index * width - step, start_y, e_width, -number * 5);
-    content.setFillStyle('red');//设置颜色为绿色
-    content.fill();
-    content.closePath();
+    function move_back(index, number) {
+      content.beginPath();
+      content.rect(start_x + index * width - step, start_y, e_width, -number * 5);
+      content.setFillStyle('red');//设置颜色为绿色
+      content.fill();
+      content.closePath();
 
-    content.setFillStyle('black');
-    content.fillText(number, start_x + index * width + 3, start_y + 10);
-  };
+      content.setFillStyle('black');
+      content.fillText(number, start_x + index * width + 3, start_y + 10);
+    };
 
-  for (i = 0; i < length; ++i) {
-    value = arr[i];
-    if (i == index_first) {
-      move_forward(i, value);
+    for (i = 0; i < length; ++i) {
+      value = arr[i];
+      if (i == index_first) {
+        move_forward(i, value);
+      }
+      else if (i == index_second) {
+       move_back(i, value);
+      }
+      else {
+        Elements(i, value);
+      }
     }
-    else if (i == index_second) {
-      move_back(i, value);
+    content.draw();
+  },
+
+  reset() {
+    var origin = this.data.array;
+    var length = origin.length;
+
+    for (var index = 0; index < length; ++index) {
+      origin[index] = Math.round(Math.random() * 50 + 1);
+      console.log(origin[index]);
     }
-    else {
-      Elements(i, value);
-    }
-  }
-  content.draw();
-},
 
-reset() {
-  var origin = this.data.array;
-  var length = origin.length;
-
-  for (var index = 0; index < length; ++index) {
-    origin[index] = Math.round(Math.random() * 50 + 1);
-    console.log(origin[index]);
-  }
-
-  this.onReady();
-},
+    this.onReady();
+  },
 
   listen_slider(elements) {
-    var delay_number = 100 - elements.detail.value;
-    console.log(delay_number);
+    var delay_level = (100 - elements.detail.value)/10;
+    console.log(delay_level);
+    
     this.setData({
-      delay_time: 100000 * delay_number
+      speed_level: delay_level 
     })
   },
 
   delay() {   //延时函数
-    var limmit = this.data.delay_time;
+    var limmit = this.data.speed_level*2000000 + 1000000;
     console.log(limmit);
     for (var index = 0; index < limmit; ++index);
+  },
+
+  static_delay(){
+    var limmit = this.data.speed_level*10000000+5000000;
+    for(var index = 0; index < limmit; ++index);
   }
-  
+  //min 1000000 5000000 每次增加200万 每次增加5000000
+  //max 11000000 55000000
 })

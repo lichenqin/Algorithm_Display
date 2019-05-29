@@ -85,3 +85,11 @@
   height: 5vh;
   width: 100vw;
 }
+
+.sortFont{
+  font-size: 20rpx;
+  color: #000;
+  position: absolute;
+  left:25vw;
+  top: 95vh;
+}

@@ -5,7 +5,7 @@ Page({
     windowWidth: 0,
     windowHeight: 0,
     gaspWidth: 30,
-    delay_time: 100000000
+    speed_level: 5
   },
 
 
@@ -69,7 +69,7 @@ Page({
     for (outter = 1; outter < origin_length; ++outter) {
       
       this.select_element(outter, outter-1, 'gray');
-      this.delay();
+      this.static_delay();
 
       for (index = outter; index > 0; --index) {
 
@@ -77,7 +77,7 @@ Page({
 
           for(step = 0; step <= width; step += 2){
               this.move(index-1, index, step);
-              this.delay();
+            this.delay();  
           }
 
           temp_value = origin_array[index-1];
@@ -86,7 +86,7 @@ Page({
 
           if( index > 1){
             this.select_element(index-1, index - 2, 'gray');
-            this.delay();
+            this.static_delay();
           }
         }
     }
@@ -147,13 +147,6 @@ Page({
 
     content.draw();
   },
-
-
-  delay(time) {   //延时函数
-    var limmit = time * 10000;
-    for (var index = 0; index < limmit; ++index);
-  },
-
 
   move(index_first, index_second, step) {//移动两个元素(就是上色功能)
     var arr = this.data.array;
@@ -235,16 +228,22 @@ Page({
   },
 
   listen_slider(elements) {
-    var delay_number = 100 - elements.detail.value;
-    console.log(delay_number);
+    var delay_level = (100 - elements.detail.value) / 10;
+    console.log(delay_level);
+
     this.setData({
-      delay_time: 100000 * delay_number
+      speed_level: delay_level
     })
   },
 
   delay() {   //延时函数
-    var limmit = this.data.delay_time;
+    var limmit = this.data.speed_level * 2000000 + 1000000;
     console.log(limmit);
+    for (var index = 0; index < limmit; ++index);
+  },
+
+  static_delay() {
+    var limmit = this.data.speed_level * 10000000 + 5000000;
     for (var index = 0; index < limmit; ++index);
   }
 

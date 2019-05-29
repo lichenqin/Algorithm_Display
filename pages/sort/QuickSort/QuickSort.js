@@ -5,7 +5,7 @@ Page({
     windowWidth: 0,
     windowHeight: 0,
     gaspWidth: 30,
-    delay_time: 100000000
+    speed_level: 5
   },
 
   onReady: function () {
@@ -181,12 +181,6 @@ Page({
     console.log(draw_array);
   },
 
-  delay(time) {
-    var limmit = time * 10000;
-    for (var index = 0; index < limmit; ++index);
-  },
-
-
   reset() {
     var origin = this.data.array;
     var length = origin.length;
@@ -200,16 +194,22 @@ Page({
   },
 
   listen_slider(elements) {
-    var delay_number = 100 - elements.detail.value;
-    console.log(delay_number);
+    var delay_level = (100 - elements.detail.value) / 10;
+    console.log(delay_level);
+
     this.setData({
-      delay_time: 100000 * delay_number
+      speed_level: delay_level
     })
   },
 
   delay() {   //延时函数
-    var limmit = this.data.delay_time;
+    var limmit = this.data.speed_level * 2000000 + 1000000;
     console.log(limmit);
+    for (var index = 0; index < limmit; ++index);
+  },
+
+  static_delay() {
+    var limmit = this.data.speed_level * 10000000 + 5000000;
     for (var index = 0; index < limmit; ++index);
   }
 
