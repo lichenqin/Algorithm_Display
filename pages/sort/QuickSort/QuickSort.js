@@ -1,10 +1,11 @@
 Page({
   data: {
     name: "QuickSort",
-    array: [3, 25, 19, 36, 48, 14, 2, 17, 41, 11, 40],
+    array: [12, 28, 30, 22, 19, 7, 45, 28, 6, 32, 38],
     windowWidth: 0,
     windowHeight: 0,
-    gaspWidth: 30
+    gaspWidth: 30,
+    delay_time: 100000000
   },
 
   onReady: function () {
@@ -58,11 +59,6 @@ Page({
 
     origin = this.Qk_Sort(0, origin.length-1, origin);
 
-    console.log(origin);
-
-    this.setData({
-      array: origin
-    })
   },
 
   Qk_Sort(left, right, array){
@@ -71,39 +67,32 @@ Page({
       return array;
     
     var head = left;
-    var base_value = array[head];
+    var base_value = array[head];//基准值
     var tail = right;
 
-    this.QuickDraw(head, left, right);
+    this.QuickDraw(head, left, right, tail);
 
-    while( true ){
-      while( right > left && array[right] > base_value){
+    while( left != right ){
+      while( right > left && array[right] >= base_value){
         --right;
         this.QuickDraw(head, left, right, tail);
       }
 
-      if( right == left)
-        break;
-      else{
-        array[left] = array[right];
-        this.QuickDraw(head, left, right, tail);
-      }
-
-      while( left < right && array[left] < base_value){
+      while( left < right && array[left] <= base_value){
         ++left;
         this.QuickDraw(head, left, right, tail);
       }
 
-      if( left == right)
-        break;
-      else{
-        array[right] = array[left];
-        this.QuickDraw(head,left,right, tail);
-      }
+      var temp = array[right];
+      array[right] = array[left];
+      array[left] = temp;
+      this.QuickDraw(head, left, right, tail);
     }
 
+    array[head] = array[left];
     array[left] = base_value;
     this.QuickDraw(head, left, right, tail);
+
     array = this.Qk_Sort(head,left-1, array);
     array = this.Qk_Sort(right+1,tail,array);
 
@@ -112,7 +101,7 @@ Page({
 
   QuickDraw(head, left, right, tail){
     this.QuickDraw_Process(head, left, right, tail);
-    this.delay(10000);
+    this.delay();
   },
 
   QuickDraw_Process(head, left, right, tail){
@@ -132,48 +121,60 @@ Page({
     var number = 0;
     content.setFontSize(10);
 
+    function base(index, number){
+      content.beginPath();
+      content.rect(start_x + index * width, start_y, e_width, -number * 5);
+      content.setFillStyle('orange');//基准为橙色
+      content.fill();
+      content.closePath();
+
+      content.setFillStyle('black');
+      content.fillText(number, start_x + index * width + 3, start_y + 10);
+    }
+
+    function left_elements(index, number){
+      content.beginPath();
+      content.rect(start_x + index * width, start_y, e_width, -number * 5);
+      content.setFillStyle('blue');//左侧为蓝色
+      content.fill();
+      content.closePath();
+
+      content.setFillStyle('black');
+      content.fillText(number, start_x + index * width + 3, start_y + 10);
+    }
+
+    function right_elements(index, number){
+      content.beginPath();
+      content.rect(start_x + index * width, start_y, e_width, -number * 5);
+      content.setFillStyle('red');//右侧为红色
+      content.fill();
+      content.closePath();
+
+      content.setFillStyle('black');
+      content.fillText(number, start_x + index * width + 3, start_y + 10);
+    }
+
+    function elements(index, number){
+      content.beginPath();
+      content.rect(start_x + index * width, start_y, e_width, -number * 5);
+      content.setFillStyle('green');//设置颜色为绿色
+      content.fill();
+      content.closePath();
+
+      content.setFillStyle('black');
+      content.fillText(number, start_x + index * width + 3, start_y + 10);
+    }
+
     for(var index = 0; index < length; ++index){
       number = draw_array[index];
-      if( index == head ){
-        content.beginPath();
-        content.rect(start_x + index * width, start_y, e_width, -number * 5);
-        content.setFillStyle('orange');//基准为橙色
-        content.fill();
-        content.closePath();
-
-        content.setFillStyle('black');
-        content.fillText(number, start_x + index * width + 3, start_y + 10);
-      }
-      else if( index > head && index <= left ){
-        content.beginPath();
-        content.rect(start_x + index * width, start_y, e_width, -number * 5);
-        content.setFillStyle('blue');//左侧为蓝色
-        content.fill();
-        content.closePath();
-
-        content.setFillStyle('black');
-        content.fillText(number, start_x + index * width + 3, start_y + 10);
-      }
-      else if( index <= tail && index >= right ){
-        content.beginPath();
-        content.rect(start_x + index * width, start_y, e_width, -number * 5);
-        content.setFillStyle('red');//右侧为红色
-        content.fill();
-        content.closePath();
-
-        content.setFillStyle('black');
-        content.fillText(number, start_x + index * width + 3, start_y + 10);
-      }
-      else{
-        content.beginPath();
-        content.rect(start_x + index * width, start_y, e_width, -number * 5);
-        content.setFillStyle('green');//设置颜色为绿色
-        content.fill();
-        content.closePath();
-
-        content.setFillStyle('black');
-        content.fillText(number, start_x + index * width + 3, start_y + 10);
-      }
+      if( index == head )
+        base(index, number);
+      else if( index > head && index <= left )
+        left_elements(index, number);
+      else if( index <= tail && index >= right )
+        right_elements(index, number);
+      else
+        elements(index, number);
     }
 
     content.draw();
@@ -196,6 +197,20 @@ Page({
     }
 
     this.onReady();
+  },
+
+  listen_slider(elements) {
+    var delay_number = 100 - elements.detail.value;
+    console.log(delay_number);
+    this.setData({
+      delay_time: 100000 * delay_number
+    })
+  },
+
+  delay() {   //延时函数
+    var limmit = this.data.delay_time;
+    console.log(limmit);
+    for (var index = 0; index < limmit; ++index);
   }
 
 })

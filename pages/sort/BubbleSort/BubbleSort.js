@@ -4,7 +4,8 @@ Page({
     array:[3,45,19,36,8,14,12,37,21,10,56],
     windowWidth: 0,
     windowHeight: 0,
-    gaspWidth:30
+    gaspWidth:30,
+    delay_time: 100000000
   },
 
 
@@ -59,7 +60,7 @@ Page({
 
     for(var index = 0; index < length-2; ++index){
       this.compare(index, index+1);
-      this.delay(50000);
+      this.delay();
     }
   },
 
@@ -129,12 +130,12 @@ Page({
     for (outter = 0; outter < origin_length; ++outter) {
       for (index = 0; index < origin_length - outter - 1; ++index) {
         this.compare(index, index + 1);//比较函数将比较的两个矩形绘图成灰色
-        this.delay(10000);//50000*10000
+        this.delay();
         if (origin_array[index] > origin_array[index + 1]) { //二者相比较
           for (step = 2; step <= width; step += 2) {
             this.move(index, index + 1, step);
             console.log(step);
-            this.delay(1000);
+            this.delay();
           }
           temp_value = origin_array[index + 1];
           origin_array[index + 1] = origin_array[index];
@@ -226,6 +227,20 @@ reset() {
   }
 
   this.onReady();
-}
+},
 
+  listen_slider(elements) {
+    var delay_number = 100 - elements.detail.value;
+    console.log(delay_number);
+    this.setData({
+      delay_time: 100000 * delay_number
+    })
+  },
+
+  delay() {   //延时函数
+    var limmit = this.data.delay_time;
+    console.log(limmit);
+    for (var index = 0; index < limmit; ++index);
+  }
+  
 })

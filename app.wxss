@@ -56,3 +56,32 @@
 .linkListCoding-style {
   font-size: 36rpx;
 }
+
+/*以下为排序界面所需格式*/
+.sort_container{
+  background-color: #fff;
+  height: 20vh;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+   align-items: flex-end;
+  justify-content: space-around; 
+}
+
+.sort_canvaStyle{
+  background-color:#eee;
+  width: 750rpx;
+  height: 60vh; 
+}
+
+.sliderStyle{
+  width: 90vw;
+  position:absolute;
+  top:65vh;
+  left: 5vw;
+}
+
+.sliderContainer{
+  height: 5vh;
+  width: 100vw;
+}

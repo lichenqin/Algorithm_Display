@@ -4,7 +4,8 @@ Page({
     array: [23, 45, 19, 36, 8, 14, 12, 37, 21, 10, 18],
     windowWidth: 0,
     windowHeight: 0,
-    gaspWidth: 30
+    gaspWidth: 30,
+    delay_time: 100000000
   },
 
 
@@ -68,7 +69,7 @@ Page({
     for (outter = 1; outter < origin_length; ++outter) {
       
       this.select_element(outter, outter-1, 'gray');
-      this.delay(10000);
+      this.delay();
 
       for (index = outter; index > 0; --index) {
 
@@ -76,7 +77,7 @@ Page({
 
           for(step = 0; step <= width; step += 2){
               this.move(index-1, index, step);
-              this.delay(1000);
+              this.delay();
           }
 
           temp_value = origin_array[index-1];
@@ -85,7 +86,7 @@ Page({
 
           if( index > 1){
             this.select_element(index-1, index - 2, 'gray');
-            this.delay(10000);
+            this.delay();
           }
         }
     }
@@ -231,6 +232,20 @@ Page({
     }
 
     this.onReady();
+  },
+
+  listen_slider(elements) {
+    var delay_number = 100 - elements.detail.value;
+    console.log(delay_number);
+    this.setData({
+      delay_time: 100000 * delay_number
+    })
+  },
+
+  delay() {   //延时函数
+    var limmit = this.data.delay_time;
+    console.log(limmit);
+    for (var index = 0; index < limmit; ++index);
   }
 
 

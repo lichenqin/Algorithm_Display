@@ -4,7 +4,8 @@ Page({
     array: [23, 45, 19, 36, 8, 14, 12, 37, 21, 10, 18],
     windowWidth: 0,
     windowHeight: 0,
-    gaspWidth: 30
+    gaspWidth: 30,
+    delay_time: 1000000
   },
 
 
@@ -51,15 +52,6 @@ Page({
       windowWidth: screenWidth,
       windowHeight: screenHeight
     })
-  },
-
-  selectSort() {
-    var length = this.data.array.length;
-
-    for (var index = 0; index < length - 2; ++index) {
-      this.compare(index, index + 1);
-      this.delay(50000);
-    }
   },
 
 
@@ -111,11 +103,6 @@ Page({
     content.draw();
   },
 
-  delay(time) {
-    var limmit = time * 10000;
-    for (var index = 0; index < limmit; ++index);
-  },
-
   Process() {
     var origin_array = this.data.array;     //origin_array 读取 数据
     var origin_length = origin_array.length;//获取origin_array的长度
@@ -140,17 +127,17 @@ Page({
         }
         
         this.select_element(max_index, index, 'gray');//比较函数将比较的两个矩形绘图成灰色
-        this.delay(10000);//50000*10000
+        this.delay();//50000*10000
       }
       
       --index;
 
       this.select_element(max_index, index, 'red');
-      this.delay(10000);
+      this.delay();
       origin_array[max_index] = origin_array[index];
       origin_array[index] = max_value;
       this.select_element(max_index, index, 'orange');
-      this.delay(10000);
+      this.delay();
     };
 
     this.setData({
@@ -169,6 +156,20 @@ Page({
     }
 
     this.onReady();
+  },
+
+  listen_slider(elements) {
+    var delay_number = 100 - elements.detail.value;
+    console.log(delay_number);
+    this.setData({
+      delay_time: 100000 * delay_number
+    })
+  },
+
+  delay() {   //延时函数
+    var limmit = this.data.delay_time;
+    console.log(limmit);
+    for (var index = 0; index < limmit; ++index);
   }
 
 })
