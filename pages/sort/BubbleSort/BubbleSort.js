@@ -228,6 +228,13 @@ Page({
     for (var index = 0; index < limmit; ++index);
   },
 
+  explain:function(){
+    wx.navigateTo({
+    url: '/pages/sort/bubble_explain/bubble_explain',
+    })
+  }, 
+  
+
   static_delay(){
     var limmit = this.data.speed_level*10000000+5000000;
     for(var index = 0; index < limmit; ++index);

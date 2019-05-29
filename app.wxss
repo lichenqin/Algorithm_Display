@@ -57,6 +57,35 @@
   font-size: 36rpx;
 }
 
+.link_head{
+  height:5vh;
+  width: 100vw;
+}
+
+.link_flex{
+  font-size:smaller;
+  display: flex;
+  justify-content: space-around;
+}
+
+.link_left{
+  background-color: #fff;
+  height:100vh;
+  width: 5vw;
+}
+
+.link_middle{
+  background-color: #fff;
+  height: 100vh;
+  width: 90vw;
+}
+
+.link_right{
+  background-color: #fff;
+  height: 100vh;
+  width:5vw;
+}
+
 /*以下为排序界面所需格式*/
 .sort_container{
   background-color: #fff;
@@ -92,4 +121,49 @@
   position: absolute;
   left:25vw;
   top: 95vh;
+}
+
+/* 以下为sort讲解界面所需格式 */
+
+.explain_title{
+  font-size:smaller;
+  font-weight: bold;
+  font-style: normal;
+}
+
+.explain_head{
+  height:5vh;
+  width: 100vw;
+}
+
+.explain_flex{
+  font-size:smaller;
+  display: flex;
+  justify-content: space-around;
+}
+
+.explain_text_strong{
+  font-weight: bold;
+}
+
+.explain_code_style{
+  font-size: smaller;
+}
+
+.explain_left{
+  background-color: #fff;
+  height:300vh;
+  width: 5vw;
+}
+
+.explain_middle{
+  background-color: #fff;
+  height: 300vh;
+  width: 90vw;
+}
+
+.explain_right{
+  background-color: #fff;
+  height: 300vh;
+  width:5vw;
 }

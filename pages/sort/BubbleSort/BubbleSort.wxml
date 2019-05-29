@@ -9,7 +9,8 @@
   <button bindtap='Process'>bubble sort</button>
   <button bindtap='reset'>Reset</button>
   <button bindtap='explain'>Explain</button>
-</view>
+  </view>
+
 <view>
   <text class='sortFont'>请等待动画完毕再离开界面 否则会造成卡顿</text>
 </view>
