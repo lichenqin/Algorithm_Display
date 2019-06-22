@@ -5,5 +5,4 @@
   <button bindtap='Process'>bubble sort</button>
   <button bindtap='reset'>Reset</button>
   <button bindtap='explain'>Explain</button>
-  <button bindtap='explains'>Explain</button>
 </view>

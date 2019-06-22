@@ -7,7 +7,7 @@
     "pages/sort/InsertSort/InsertSort",
     "pages/sort/QuickSort/QuickSort",
     "pages/sort/SelectSort/SelectSort",
-    
+    "pages/BTree/BTreeIndex/BTreeIndex",
     "pages/linkList/linkListAdd/linkListAdd",
     "pages/linkList/linkListSub/linkListSub",
     "pages/linkList/linkListAddTop/linkListAddTop",

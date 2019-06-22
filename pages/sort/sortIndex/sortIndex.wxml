@@ -2,11 +2,27 @@
   <image src="/images/ArraySort.png" class="image-head"></image>
 </view>
 
-<view class='bottom-style'>
-  <button style="background: #6eb;" bindtap='bubble'>冒泡排序</button>
-  <button style="background: #6ef;" bindtap='select'>选择排序</button>
-</view>
-<view class='bottom-style'>
-  <button style="background: #6cf;" bindtap='insert'>插入排序</button>
-  <button style="background: #5af;" bindtap='quick'>快速排序</button>
-</view>
+<view class="index-bd">
+    <view class="kind-list">
+
+      <block wx:for-items="{{list}}" wx:key="{{item.id}}">
+        <view class="kind-list-item">
+          <view id="{{item.id}}" class="kind-list-item-hd {{item.open ? 'kind-list-item-hd-show' : ''}}" bindtap="kindToggle">
+            <view class="kind-list-text">{{item.name}}</view>
+            <image class="kind-list-img" src="/images/More.png"></image>
+          </view>
+          <view class="kind-list-item-bd {{item.open ? 'kind-list-item-bd-show' : ''}}">
+            <view class="navigator-box {{item.open ? 'navigator-box-show' : ''}}">
+              <block wx:for-items="{{item.pages}}" wx:for-item="page" wx:key="*item">
+                <navigator url="/pages/sort/{{page}}/{{page}}" class="navigator">
+                  <view class="navigator-text">{{page}}</view>
+                  <view class="navigator-arrow"></view>
+                </navigator>
+              </block>
+            </view>
+          </view>
+        </view>
+      </block>
+
+    </view>
+  </view>

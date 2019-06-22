@@ -8,6 +8,11 @@ Page({
     wx.navigateTo({
       url: '/pages/linkList/linkListIndex/linkListIndex',
     })
+  },
+  BTree: function () {
+    wx.navigateTo({
+      url: '/pages/BTree/BTreeIndex/BTreeIndex',
+    })
   }
 
 })

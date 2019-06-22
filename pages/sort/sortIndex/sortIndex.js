@@ -1,23 +1,38 @@
 Page({
-  bubble: function () {
-    wx.navigateTo({
-      url: '/pages/sort/BubbleSort/BubbleSort',
-    })
+
+  data: {
+    list: [
+      {
+        id: 'Primary',
+        name: '基础',
+        open: false,
+        pages: ['BubbleSort', 'SelectSort', 'InsertSort']
+      }, {
+        id: 'Advanced',
+        name: '进阶',
+        open: false,
+        pages: ['QuickSort', 'MergeSort', 'HeapSort']
+      }
+    ]
   },
-  select: function () {
-    wx.navigateTo({
-      url: '/pages/sort/SelectSort/SelectSort',
+
+  kindToggle(e) {
+    const id = e.currentTarget.id
+    const list = this.data.list
+    for (let i = 0, len = list.length; i < len; ++i) {
+      if (list[i].id === id) {
+        list[i].open = !list[i].open
+      } else {
+        list[i].open = false
+      }
+    }
+    this.setData({
+      list
     })
+    wx.reportAnalytics('click_view_programmatically', {})
   },
-  insert: function () {
-    wx.navigateTo({
-      url: '/pages/sort/InsertSort/InsertSort',
-    })
-  },
-  quick: function () {
-    wx.navigateTo({
-      url: '/pages/sort/QuickSort/QuickSort',
-    })
+  onLoad: function (options) {
+
   }
 
 })
